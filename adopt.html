@@ -1,83 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoption Requirements & Resources</title>
-    <!-- Meta tags for proper display on mobile devices -->
+  <meta charset="utf-8">
+  <title>Local Pet Adoption — Adopt & Resources</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --gap: 16px; --border: #d7d7d7; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; line-height: 1.55; }
+    header, footer { padding: 16px; background: #f7f7f7; }
+    header img { width: 160px; height: auto; display: block; }
+    nav a { margin-right: 12px; text-decoration: none; color: #0a58ca; }
+    nav a[aria-current="page"] { font-weight: 700; }
+    main { padding: 20px; }
+    img { max-width: 100%; height: auto; display: block; }
+    .grid { display: grid; gap: var(--gap); }
+    @media (min-width: 768px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
+    caption { font-weight: 600; margin-bottom: 6px; }
+    .muted { color: #666; }
+    footer a { color: #0a58ca; }
+  </style>
 </head>
 <body>
-    <!-- Header and Navigation -->
-    <header>
-        <nav aria-label="Main navigation">
-            <a href="index.html">Home</a>
-            <a href="adopt.html" aria-current="page">Adopt</a>
-        </nav>
-    </header>
+  <header>
+    <img src="images/logo.jpg" alt="Local Pet Adoption logo">
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="adopt.html" aria-current="page">Adopt & Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Main Heading -->
+  <main id="content" tabindex="-1">
     <h1>Adoption Requirements & Resources</h1>
-    <p>Learn about the requirements for adopting a pet. For more information, visit <a href="https://en.wikipedia.org/wiki/Animal_adoption" target="_blank" rel="noopener noreferrer">Wikipedia</a>.</p>
+    <p>
+      Thinking about adopting? Review these essentials and browse the package options. For general
+      background, see
+      <a href="https://en.wikipedia.org/wiki/Animal_adoption" target="_blank" rel="noopener noreferrer">Animal adoption (Wikipedia)</a>.
+    </p>
 
-    <!-- What You’ll Need (Ordered List) -->
-    <section>
-        <h2>What You’ll Need</h2>
+    <!-- Requirements list + helpful tips -->
+    <section class="grid two" aria-labelledby="requirements">
+      <div>
+        <h2 id="requirements">What You’ll Need</h2>
         <ol>
-            <li>Identification</li>
-            <li>Home visit</li>
-            <li>Adoption fee</li>
+          <li>Valid ID and proof of residence.</li>
+          <li>Landlord approval if you rent your home.</li>
+          <li>Agreement to provide routine veterinary care and training.</li>
+          <li>Transportation crate or safe travel plan for your new pet.</li>
         </ol>
-    </section>
-
-    <!-- Adoption Comparison Table -->
-    <section>
-        <h2>Adoption Comparison</h2>
-        <!-- Table caption provides additional context for screen readers -->
-        <table border="1" cellpadding="10" cellspacing="0">
-            <caption>Adoption Packages and Fees</caption>
-            <thead>
-                <tr>
-                    <th>Package</th>
-                    <th>Includes</th>
-                    <th>Fee</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Standard</td>
-                    <td>Basic vet check</td>
-                    <td>$50</td>
-                    <td>Includes vaccinations</td>
-                </tr>
-                <tr>
-                    <td>Puppy-Kitten</td>
-                    <td>Full vet check</td>
-                    <td>$100</td>
-                    <td>Includes spaying/neutering</td>
-                </tr>
-                <tr>
-                    <td>Senior</td>
-                    <td>Special care package</td>
-                    <td>$30</td>
-                    <td>Includes senior check-up</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Helpful Links Section -->
-    <section>
-        <h2>Helpful Links</h2>
+      </div>
+      <div>
+        <h2>Helpful Tips</h2>
         <ul>
-            <li><a href="https://www.adoptapet.com" target="_blank" rel="noopener noreferrer">Adopt a Pet</a></li>
-            <li><a href="https://www.petfinder.com" target="_blank" rel="noopener noreferrer">Pet Finder</a></li>
+          <li>Bring photos of your living space to discuss suitability.</li>
+          <li>Ask about temperament, energy level, and medical history.</li>
+          <li>Be open to senior or special-needs pets — they’re wonderful companions.</li>
         </ul>
+      </div>
     </section>
 
-    <!-- Back Link to Home -->
-    <footer>
-        <p><a href="index.html">← Back to Home</a></p>
-    </footer>
+    <!-- Adoption package comparison table -->
+    <section aria-labelledby="packages">
+      <h2 id="packages">Adoption Packages</h2>
+      <table>
+        <caption>Package Features & Fees</caption>
+        <thead>
+          <tr>
+            <th scope="col">Package</th>
+            <th scope="col">Includes</th>
+            <th scope="col">Fee</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Standard</td>
+            <td>Initial vaccines, microchip, basic wellness exam</td>
+            <td>$100</td>
+            <td>Most common option</td>
+          </tr>
+          <tr>
+            <td>Puppy/Kitten</td>
+            <td>Vaccines, microchip, spay/neuter, starter training guide</td>
+            <td>$150</td>
+            <td>Age & weight limits; booster schedule provided</td>
+          </tr>
+          <tr>
+            <td>Senior</td>
+            <td>Health screening, senior diet starter, medication guidance</td>
+            <td>$50</td>
+            <td>For pets 8+ years; great for calm households</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" class="muted">Fees vary by rescue partner; verify details at the event or in listings.</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Sample placeholders again to meet "image" requirement on this page -->
+    <section aria-labelledby="samples">
+      <h2 id="samples">Sample Images</h2>
+      <div class="grid two">
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.ofVX5dnNXkuxy411DijZFAHaEo?w=308&h=192&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kitten placeholder image 480 by 320">
+          <figcaption>Puppy placeholder (Place Puppy).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.3lWy-5PhiRwOR8xVT5w-0gHaFj?w=241&h=181&c=7&r=0&o=7&pid=1.7&rm=3" alt="Puppy placeholder image 480 by 320">
+          <figcaption>Kitten placeholder (Place Kitten).</figcaption>
+        </figure>
+      </div>
+      <p class="muted">Placeholders are for demo only — replace with your own images later.</p>
+    </section>
+
+    <!-- Internal navigation hint -->
+    <p>
+      Questions? Use our <a href="contact.html">Contact</a> page to send a message, or return to
+      the <a href="index.html">Home</a> page for events.
+    </p>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; Local Pet Adoption</p>
+    <p class="muted">Resources: Wikipedia (background), Place Puppy & Place Kitten (image placeholders).</p>
+  </footer>
 </body>
 </html>
