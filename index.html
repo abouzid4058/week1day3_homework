@@ -1,110 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find Your New Best Friend</title>
-     <style>
-        /* Control for both images */
-        img {
-            max-width: 100%; /* Makes sure the image does not exceed container's width */
-            height: auto; /* Maintain the aspect ratio */
-            display: block; /* Remove any space below the image */
-            margin: 0 auto; /* Center the image horizontally */
-        }
-
-        /* Header image specific styling */
-        header img {
-            width: 200px; /* Logo size control */
-        }
-
-        /* Hero image specific styling */
-        .hero-image {
-            max-width: 100%; /* Responsive */
-            height: auto; /* Proportional scaling */
-            display: block;
-            margin: 20px 0; /* Add space above and below */
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Local Pet Adoption — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Minimal inline CSS for readability (no frameworks used) -->
+  <style>
+    :root { --gap: 16px; --border: #cfcfcf; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; line-height: 1.55; }
+    header, footer { padding: 16px; background: #f7f7f7; }
+    header img { width: 160px; height: auto; display: block; }
+    nav { margin-top: 8px; }
+    nav a { margin-right: 12px; text-decoration: none; color: #0a58ca; }
+    nav a[aria-current="page"] { font-weight: 700; }
+    main { padding: 20px; }
+    img { max-width: 100%; height: auto; display: block; }
+    .hero { margin: 20px 0; border: 1px solid var(--border); }
+    .grid { display: grid; gap: var(--gap); }
+    @media (min-width: 768px) { .grid.two { grid-template-columns: 1fr 1fr; } }
+    figure { margin: 0; }
+    figcaption { font-size: 0.9rem; color: #555; margin-top: 6px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { border: 1px solid var(--border); padding: 10px; text-align: left; }
+    caption { font-weight: 600; margin-bottom: 6px; }
+    .muted { color: #666; font-size: 0.95rem; }
+    footer a { color: #0a58ca; }
+    .callout { padding: 12px 14px; background: #fff7dd; border: 1px solid #f0da9b; border-radius: 6px; }
+    .list-inline { padding-left: 0; list-style: none; margin: 0; }
+    .list-inline li { display: inline; margin-right: 10px; }
+    .sr-only { position: absolute; left: -9999px; }
+  </style>
 </head>
 <body>
+  <!-- ===== Header with site logo and primary navigation ===== -->
+  <header>
+    <img src="images/logo.jpg" alt="Local Pet Adoption logo">
+    <nav aria-label="Primary">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="adopt.html">Adopt & Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Header Section -->
-    <header>
-        <!-- Logo image with alt text for accessibility -->
-      <img src="images/logo.jpg" alt="Pet Adoption Logo" class="logo">
-        
-        <!-- Navigation with clear internal links; 'aria-current' for accessibility -->
-        <nav>
-            <a href="index.html" aria-current="page">Home</a> <!-- Active page highlighted -->
-            <a href="adopt.html">Adopt</a>
-        </nav>
-    </header>
+  <!-- ===== Main content ===== -->
+  <main id="content" tabindex="-1">
+    <!-- Hero / intro -->
+    <figure class="hero">
+      <img src="images/hero.jpg" alt="Happy adopted pets with families enjoying the park">
+      <figcaption>Finding homes for pets through events, partners, and community support.</figcaption>
+    </figure>
 
-    <!-- Hero image with alt text for accessibility -->
-<img src="images/hero.jpg" alt="Happy pets with their new families" class="hero-image">
-
-    <!-- Main Heading -->
     <h1>Find Your New Best Friend</h1>
-    
-    <!-- Introduction paragraph -->
-    <p>Our mission is to connect loving families with pets in need of a home. Join us in giving these animals a second chance!</p>
+    <p>
+      We connect rescued pets with loving homes through weekly adoption events, online listings, and
+      outreach with local partners. Start here to learn why adoption saves lives and how you can help.
+    </p>
 
-    <!-- Section: Why Adopt? -->
-    <section>
-        <h2>Why Adopt?</h2>
-        <ul>
-            <li>Save a life and provide a loving home.</li>
-            <li>Gain a loyal companion to share your journey with.</li>
-            <li>Support your local community by adopting local rescues.</li>
-        </ul>
+    <!-- Why adopt: list + supporting paragraph -->
+    <section aria-labelledby="why-adopt">
+      <h2 id="why-adopt">Why Adopt?</h2>
+      <div class="grid two">
+        <div>
+          <ul>
+            <li>Saves lives and reduces overcrowding in shelters and rescues.</li>
+            <li>Supports responsible ownership and community wellness.</li>
+            <li>Many adoptions include initial vaccines and microchipping.</li>
+            <li>You gain a loyal companion while making room for other animals in need.</li>
+          </ul>
+        </div>
+        <div>
+          <p class="callout">
+            New to adoption? Read background info on
+            <a href="https://en.wikipedia.org/wiki/Animal_adoption" target="_blank" rel="noopener noreferrer">Animal adoption (Wikipedia)</a>
+            to understand typical processes and best practices.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- Section: Upcoming Events -->
-    <section>
-        <h2>Upcoming Events</h2>
-        
-        <!-- Table: Upcoming Adoption Events -->
-        <table border="1">
-            <caption>Our upcoming pet adoption events</caption>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Location</th>
-                    <th>Time</th>
-                    <th>Notes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>March 15, 2023</td>
-                    <td>City Park</td>
-                    <td>10 AM</td>
-                    <td>Join us for a fun-filled pet adoption fair</td>
-                </tr>
-                <tr>
-                    <td>April 20, 2023</td>
-                    <td>Community Center</td>
-                    <td>1 PM</td>
-                    <td>Volunteer training session – become a part of the movement!</td>
-                </tr>
-            </tbody>
-        </table>
+    <!-- Events table with caption and scope -->
+    <section aria-labelledby="events">
+      <h2 id="events">Weekend Adoption Events</h2>
+      <p class="muted">Arrive early to meet volunteers, review requirements, and get matched with the right pet.</p>
+      <table>
+        <caption>Upcoming Events</caption>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Location</th>
+            <th scope="col">Time</th>
+            <th scope="col">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Saturday</td>
+            <td>Downtown Park</td>
+            <td>10:00–14:00</td>
+            <td>Puppy social hour at 12:00; on-site adoption counselors</td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td>Community Center</td>
+            <td>11:00–15:00</td>
+            <td>Senior pets spotlight; quiet meet-and-greet booths</td>
+          </tr>
+          <tr>
+            <td>First Friday</td>
+            <td>City Plaza</td>
+            <td>16:00–19:00</td>
+            <td>Foster info table and volunteer sign-ups</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2023 Pet Adoption</p>
+    <!-- Placeholder images per Week 3 resources -->
+    <section aria-labelledby="placeholders">
+      <h2 id="placeholders">Sample Images (Week 3 Placeholders)</h2>
+      <ul class="list-inline">
+        <li><a href="https://place-puppy.com" target="_blank" rel="noopener noreferrer">Place Puppy</a></li>
+        <li><a href="https://placekitten.com" target="_blank" rel="noopener noreferrer">Place Kitten</a></li>
+      </ul>
+      <div class="grid two" style="margin-top: 12px;">
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.3lWy-5PhiRwOR8xVT5w-0gHaFj?w=241&h=181&c=7&r=0&o=7&pid=1.7&rm=3" alt="Puppy placeholder image 480 by 320">
+          <figcaption>Puppy placeholder (via Place Puppy).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.ofVX5dnNXkuxy411DijZFAHaEo?w=308&h=192&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kitten placeholder image 480 by 320">
+          <figcaption>Kitten placeholder (via Place Kitten).</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <!-- External Links: Image placeholders with links for dog and kitten images -->
-        <p>Image placeholders: 
-            <a href="https://www.freepik.com/free-photo/shallow-focus-shot-cute-golden-retriever-puppy-resting-floor_11061966.htm#fromView=search&page=1&position=3&uuid=58185e23-8e62-487c-a1ed-99eb72d45eb6&query=puppy">Place Puppy</a> | 
-            <a href="https://www.freepik.com/free-ai-image/close-up-adorable-kittens_65622403.htm#fromView=search&page=1&position=7&uuid=ddf88138-72f2-4e7f-9c8d-6e590da33f6a&query=kitten">Place Kitten</a>
-        </p>
-        <p>Images used under Freepik License</p>
-        <img src="https://www.freepik.com/free-photo/shallow-focus-shot-cute-golden-retriever-puppy-resting-floor_11061966.htm#fromView=search&page=1&position=3&uuid=58185e23-8e62-487c-a1ed-99eb72d45eb6&query=puppy" alt="Placeholder puppy image">
-        <img src="https://www.freepik.com/free-ai-image/close-up-adorable-kittens_65622403.htm#fromView=search&page=1&position=7&uuid=ddf88138-72f2-4e7f-9c8d-6e590da33f6a&query=kitten" alt="Two fluffy kittens sitting close together, looking up with curious and playful expressions, soft lighting and a cozy indoor background create a warm and inviting atmosphere">
-    </footer>
+    <!-- Internal call-to-action -->
+    <section aria-labelledby="cta">
+      <h2 id="cta">Ready to Adopt?</h2>
+      <p>
+        Review requirements and package options on our
+        <a href="adopt.html">Adopt &amp; Resources</a> page, then reach out via the
+        <a href="contact.html">Contact</a> form if you have questions.
+      </p>
+    </section>
+  </main>
 
+  <!-- ===== Footer ===== -->
+  <footer role="contentinfo">
+    <p>&copy; Local Pet Adoption</p>
+    <p class="muted">Educational demo site. Image placeholders provided by Place Puppy and Place Kitten.</p>
+  </footer>
 </body>
 </html>
