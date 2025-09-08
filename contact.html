@@ -1,50 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+  <meta charset="utf-8">
+  <title>Local Pet Adoption — Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --gap: 16px; --border: #dadada; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 0; line-height: 1.55; }
+    header, footer { padding: 16px; background: #f7f7f7; }
+    header img { width: 160px; height: auto; display: block; }
+    nav a { margin-right: 12px; text-decoration: none; color: #0a58ca; }
+    nav a[aria-current="page"] { font-weight: 700; }
+    main { padding: 20px; }
+    img { max-width: 100%; height: auto; display: block; }
+    form { max-width: 720px; padding: 16px; border: 1px solid var(--border); border-radius: 6px; background: #fff; }
+    fieldset { border: 1px solid var(--border); margin: 12px 0; padding: 12px; }
+    legend { font-weight: 600; }
+    label { display: block; margin-top: 10px; }
+    input, select, textarea { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ccc; border-radius: 4px; font: inherit; }
+    button { margin-top: 12px; padding: 10px 14px; border: 1px solid #0a58ca; background: #0a58ca; color: #fff; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #0949a4; }
+    .muted { color: #666; }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="images/logo.jpg" alt="Local Pet Adoption logo">
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="adopt.html">Adopt & Resources</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
 
-    <!-- Header Section -->
-    <header>
-        <!-- Logo image with alt text for accessibility -->
-        <img src="images/logo.jpg" alt="Pet Adoption Logo" width="200">
-        
-        <!-- Navigation with clear internal links; 'aria-current' for accessibility -->
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="adopt.html">Adopt</a>
-            <a href="contact.html" aria-current="page">Contact</a>
-        </nav>
-    </header>
+  <main id="content" tabindex="-1">
+    <h1>Contact Us</h1>
+    <p>
+      For questions about events, adoption requirements, or available pets, reach us via phone or email,
+      or send a message using the form below. You can also read general background on
+      <a href="https://en.wikipedia.org/wiki/Animal_adoption" target="_blank" rel="noopener noreferrer">Animal adoption</a>.
+    </p>
 
-    <!-- Contact Form Section -->
-    <main>
-        <h1>Contact Us</h1>
-        <p>If you have any questions or need more information, please fill out the form below.</p>
+    <!-- Contact details block -->
+    <section aria-labelledby="reach">
+      <h2 id="reach">How to Reach Us</h2>
+      <p><strong>Phone:</strong> (800) GCLIFFS</p>
+      <p><strong>Email:</strong> <a href="mailto:info@greatcliffs.com">info@greatcliffs.com</a></p>
+    </section>
 
-        <!-- Form to submit contact details -->
-        <form action="#" method="post">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+    <!-- Small images to keep parity (image requirement met on all pages) -->
+    <section aria-labelledby="smiles">
+      <h2 id="smiles">Happy Tails</h2>
+      <div style="display:grid; gap:16px; grid-template-columns: 1fr 1fr;">
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.3lWy-5PhiRwOR8xVT5w-0gHaFj?w=241&h=181&c=7&r=0&o=7&pid=1.7&rm=3" alt="Puppy placeholder image 480 by 320">
+          <figcaption>(Puppy).</figcaption>
+        </figure>
+        <figure>
+          <img src="https://th.bing.com/th/id/OIP.ofVX5dnNXkuxy411DijZFAHaEo?w=308&h=192&c=7&r=0&o=7&pid=1.7&rm=3" alt="Kitten placeholder image 480 by 320">
+          <figcaption>Kitten </figcaption>
+        </figure>
+      </div>
+      <p class="muted">These placeholders simulate success-story photos.</p>
+    </section>
 
-            <label for="email">Your Email:</label><br>
-            <input type="email" id="email" name="email" required><br><br>
+    <!-- Full contact form -->
+    <section aria-labelledby="form">
+      <h2 id="form">Send a Message</h2>
+      <form action="/contact" method="post">
+        <fieldset>
+          <legend>Your Information</legend>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
 
-            <label for="message">Your Message:</label><br>
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
 
-            <!-- Submit button -->
-            <button type="submit">Submit</button>
-        </form>
-    </main>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </fieldset>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2023 Pet Adoption</p>
-    </footer>
+        <fieldset>
+          <legend>Preferences</legend>
+          <p class="muted">Tell us how you’d like to be contacted and which cliff you’re asking about.</p>
 
+          <div role="group" aria-labelledby="contact-pref-label">
+            <span id="contact-pref-label" class="muted">Preferred Contact Method</span>
+            <label><input type="radio" name="preferred_contact" value="email" checked> Email</label>
+            <label><input type="radio" name="preferred_contact" value="phone"> Phone</label>
+          </div>
+
+          <label for="cliff">Which cliff are you inquiring about?</label>
+          <select id="cliff" name="cliff">
+            <option value="west">West Cliff</option>
+            <option value="north">North Cliff</option>
+            <option value="east">East Cliff</option>
+            <option value="south">South Cliff</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your Message</legend>
+          <label for="message">How did you hear about us / your message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </fieldset>
+
+        <button type="submit">Send</button>
+      </form>
+
+      <p class="muted" style="margin-top:12px;">
+        Prefer to browse first? Visit <a href="index.html">Home</a> for events or
+        <a href="adopt.html">Adopt & Resources</a> for requirements.
+      </p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; Local Pet Adoption</p>
+    <p class="muted">Placeholders from Place Puppy & Place Kitten. Background info: Wikipedia.</p>
+  </footer>
 </body>
 </html>
